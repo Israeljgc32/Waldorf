@@ -4,6 +4,9 @@
 	margin: 0px;
 	box-sizing: border-box;
 }
+html{
+	scroll-behavior: smooth;
+}
 					/* INICIA MI LOGO*/
 .logo {
 	width: 100%;
@@ -14,50 +17,87 @@
 }
 					/* TERMINA MI LOGO */
 					/* INICIA MI MENU DE NAVEGACION */
+.container{
+	position: relative;
+}
 nav{
 	width: 100%;
-	background: black;
-	display: inline-block;
+	position: absolute;
+	top: 0;
 }
-.menu {
-	margin: auto;
-	width: 550px;
-}
-.menu li{
+nav ul {
+	background: rgb(10, 10, 10, 0.4);
+	display: flex;
+	flex-direction: row;
 	list-style: none;
+	justify-content: center; 
+	/* justify-content permite ubicar de manera horizontal*/
+	/* align-intems nos permite ubicar de forma vertical*/
 }
-.menu a{
+nav ul li a{
 	text-decoration: none;
 	font-size: 24px;
 	color:  #B7950B;
-	padding: 10px 15px;
+	padding: 10px;
 	display: block;
 }
-.menu a:hover{
+nav ul li a:hover{
 	background: #2E4053;
 	color: #E2D618;
 }
-.menu > li {
-	float: left;
-}
-.menu li ul{
+nav ul li > ul{
 	display: none;
+}
+nav ul li:hover > ul{
+	display: block;
 	position: absolute;
 }
-.menu li:hover > ul{
-	display: block;
-	background: black;
-}
 					/* TERMINA MI MENU DE NAVEGACION*/
-.front {
+h1{
+	text-align: center;
+	color: darkred;
+	font-size: 32px;
+	padding: 10px;
+}
+.front{
 	width: 100%;
-	height: 500px;
+	display: flex;
+	overflow: hidden;
 }
 .front img{
 	width: 100%;
-	height: 100%;
+	animation: slider 32s infinite linear;
 }
-h1{
-	font-size: 32px;
-	color: #7D1802;
+@keyframes slider {
+	0%{ transform: translateX(0);}
+	10%{ transform: translateX(0);}
+
+	15%{ transform: translateX(-100%);}
+	30%{ transform: translateX(-100%);}
+
+	35%{ transform: translateX(-200%);}
+	50%{ transform: translateX(-200%);}
+
+	55%{ transform: translateX(-300%);}
+	70%{ transform: translateX(-300%);}
+
+	75%{ transform: translateX(-400%);}
+	90%{ transform: translateX(-400%);}
+
+	95%{ transform: translateX(-500%);}
+	100%{ transform: translateX(-500%);}
+}
+.portada{
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.portada .parrafo{
+	width: 40%;
+	text-indent: 20px;
+}
+.portada img{
+	width: 30%;
 }
